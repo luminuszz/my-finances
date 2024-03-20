@@ -6,10 +6,17 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "drizzle-orm": "^0.30.4",
+    "elysia": "latest",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@rocketseat/eslint-config": "^2.2.2",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.14",
+    "eslint": "^8.57.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "typescript": "^5.4.2"
   },
   "module": "src/index.js"
 }

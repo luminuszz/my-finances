@@ -1,0 +1,21 @@
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/:/app/src
+    env_file:
+      - .env
+    
+
+  database:
+    env_file:
+    - .env  
+    image: postgres
+    environment:
+      POSTGRES_DB: ${DATABASE_DB_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
