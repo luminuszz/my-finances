@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710955828518,
+      "tag": "0000_plain_speed",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710969994745,
+      "tag": "0001_curved_kinsey_walden",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710970326610,
+      "tag": "0002_chemical_shaman",
+      "breakpoints": true
+    }
+  ]
+}

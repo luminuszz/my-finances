@@ -1,21 +1,32 @@
 services:
   web:
+    depends_on:
+     - database
     build: 
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./src/:/app/src
     env_file:
-      - .env
+      - path: .env
+      - path: .env.override
+    ports:
+      - "${API_PORT}:${API_PORT}"
     
-
   database:
-    env_file:
-    - .env  
+    container_name: "database"
     image: postgres
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      - path: .env
     environment:
       POSTGRES_DB: ${DATABASE_DB_NAME}
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     ports:
       - "${DATABASE_PORT}:${DATABASE_PORT}"
+
+
+volumes:
+  pg_data:

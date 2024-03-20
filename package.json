@@ -3,15 +3,22 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "migrate": "bun run src/database/migrate.ts"
   },
   "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.10",
     "drizzle-orm": "^0.30.4",
     "elysia": "latest",
-    "postgres": "^3.4.3"
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
+    "@types/bcrypt": "^5.0.2",
     "bun-types": "latest",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",

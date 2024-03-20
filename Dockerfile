@@ -1,6 +1,6 @@
 FROM oven/bun
 
-WORKDIR app
+WORKDIR /app
 
 COPY . .
 

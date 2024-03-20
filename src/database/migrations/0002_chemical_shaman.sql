@@ -1,0 +1,1 @@
+ALTER TABLE "payments" ALTER COLUMN "expires_at" SET DATA TYPE timestamp;
