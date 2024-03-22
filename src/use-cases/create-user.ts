@@ -1,8 +1,8 @@
 import { hash } from 'bcrypt'
 
 import { db } from '../database/db'
-import { User, users } from '../database/schemas'
-import { Either, left, right } from '../utils/either'
+import { type User, users } from '../database/schemas'
+import { type Either, left, right } from '../utils/either'
 
 interface CreateUserRequest {
   name: string

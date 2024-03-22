@@ -22,6 +22,20 @@
       "when": 1710970326610,
       "tag": "0002_chemical_shaman",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710990113697,
+      "tag": "0003_flat_obadiah_stane",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1711117103769,
+      "tag": "0004_chief_maximus",
+      "breakpoints": true
     }
   ]
 }

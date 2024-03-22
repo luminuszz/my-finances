@@ -1,6 +1,6 @@
 import { db } from '../database/db'
-import { Period, periods } from '../database/schemas'
-import { Either, left, right } from '../utils/either'
+import { type Period, periods } from '../database/schemas'
+import { type Either, left, right } from '../utils/either'
 
 interface CreatePeriodRequest {
   userId: string

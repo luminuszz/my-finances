@@ -8,6 +8,7 @@ const envSchema = z.object({
   DATABASE_HOST: z.string(),
   DATABASE_URL: z.string(),
   API_PORT: z.coerce.number(),
+  JWT_SECRET: z.string(),
 })
 
 export type EnvType = z.infer<typeof envSchema>

@@ -1,8 +1,8 @@
 import { createId } from '@paralleldrive/cuid2'
-import { InferSelectModel, relations } from 'drizzle-orm'
+import { type InferSelectModel, relations } from 'drizzle-orm'
 import { pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
-import { payments } from './payments'
+import { debits } from './debts'
 import { users } from './users'
 
 export const periods = pgTable('periods', {
@@ -27,7 +27,7 @@ export const periodRelations = relations(periods, ({ one, many }) => {
       references: [users.id],
       relationName: 'userPeriods',
     }),
-    payments: many(payments),
+    debits: many(debits),
   }
 })
 
