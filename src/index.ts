@@ -5,17 +5,15 @@ import { periodRoutes } from './http/routes/period-routes'
 import { usersRoutes } from './http/routes/users-routes'
 import { env } from './utils/env'
 
-const app = new Elysia({})
-
-app
+const app = new Elysia()
+  .use(usersRoutes)
+  .use(periodRoutes)
   .use(
     cors({
       credentials: true,
       origin: true,
     }),
   )
-  .use(usersRoutes)
-  .use(periodRoutes)
   .listen(env.API_PORT)
 
 console.log(
