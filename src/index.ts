@@ -1,7 +1,6 @@
 import cors from '@elysiajs/cors'
 import { Elysia } from 'elysia'
 
-import { debitsRoutes } from './http/routes/debts-routes'
 import { periodRoutes } from './http/routes/period-routes'
 import { usersRoutes } from './http/routes/users-routes'
 import { env } from './utils/env'
@@ -17,7 +16,6 @@ app
   )
   .use(usersRoutes)
   .use(periodRoutes)
-  .use(debitsRoutes)
   .listen(env.API_PORT)
 
 console.log(

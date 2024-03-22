@@ -2,40 +2,40 @@ import { db } from '../database/db'
 import { type Debit, debits } from '../database/schemas'
 import { type Either, left, right } from '../utils/either'
 
-interface CreatePaymentRequest {
-  paymentPeriodId: string
+interface CreateDebitRequest {
+  debitPeriodId: string
   amount: number
   expiresAt: Date | null
   description: string
   userId: string
 }
 
-type CreatePaymentResponse = Either<Error, { debit: Debit }>
+type CreateDebitResponse = Either<Error, { debit: Debit }>
 
-export async function createPayment({
+export async function createDebit({
   amount,
   expiresAt,
-  paymentPeriodId,
+  debitPeriodId,
   description,
   userId,
-}: CreatePaymentRequest): Promise<CreatePaymentResponse> {
+}: CreateDebitRequest): Promise<CreateDebitResponse> {
   const user = await db.query.users.findFirst({
     where(fields, { eq }) {
       return eq(fields.id, userId)
     },
   })
 
-  const canCreatePayment = user && user.id === userId
+  const canCreateDebit = user && user.id === userId
 
-  if (!canCreatePayment) {
-    return left(new Error('User is not allowed to create payment'))
+  if (!canCreateDebit) {
+    return left(new Error('User is not allowed to create debit'))
   }
 
   const [debit] = await db.insert(debits).values({
     amount,
     expiresAt,
     description,
-    periodId: paymentPeriodId,
+    periodId: debitPeriodId,
   })
 
   return right({ debit })

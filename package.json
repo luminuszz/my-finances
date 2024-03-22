@@ -11,6 +11,7 @@
     "@elysiajs/jwt": "0.8.0",
     "@paralleldrive/cuid2": "^2.2.2",
     "bcrypt": "^5.1.1",
+    "csv-parser": "^3.0.0",
     "dayjs": "^1.11.10",
     "drizzle-orm": "^0.30.4",
     "elysia": "0.8.9",
